@@ -9,6 +9,8 @@ Small exercises built while learning React fundamentals.
 - Event handling and controlled inputs
 - useEffect (basic, dependency array, cleanup)
 - API fetching (async/await, loading state, error handling, AbortController)
+- Conditional rendering (&&, ternary)
+- Exercise navigator with active tab highlighting
 
 ## Exercises
 

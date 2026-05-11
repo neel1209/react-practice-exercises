@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 16px 24px;
+    background-color: #1e1e1e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3a3a3a;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.nav button:hover {
+    background-color: #555;
+    color: white;
+}
+
+.nav button.active {
+    background-color: #646cff;
+    color: white;
+    font-weight: bold;
+}
+
+.exercise-container {
+    padding: 40px 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}

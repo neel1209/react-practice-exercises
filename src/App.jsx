@@ -9,15 +9,38 @@ import JokeFetcher from "./exercises/07-api-fetching/JokeFetcher";
 import "./App.css";
 
 function App() {
+    const [active, setActive] = useState("Counter");
+    const tabs = [
+        { id: "Counter", label: "Counter" },
+        { id: "ColorPicker", label: "Color Picker" },
+        { id: "LiveForm", label: "Live Form" },
+        { id: "EffectCounter", label: "Effect Counter" },
+        { id: "DependencyTest", label: "Dependency Test" },
+        { id: "ToggleTimer", label: "Toggle Timer" },
+        { id: "JokeFetcher", label: "Joke Fetcher" },
+    ];
     return (
         <>
-            {/* <Counter /> */}
-            {/* <ColorPicker /> */}
-            <LiveForm />
-            {/* <EffectCounter /> */}
-            {/*<DependencyTest /> */}
-            {/*<ToggleTimer />*/}
-            {/*<JokeFetcher />*/}
+            <nav className="nav">
+                {tabs.map((tab) => (
+                    <button
+                        key={tab.id}
+                        onClick={() => setActive(tab.id)}
+                        className={active === tab.id ? "active" : ""}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </nav>
+            <div className="exercise-container">
+                {active === "Counter" && <Counter />}
+                {active === "ColorPicker" && <ColorPicker />}
+                {active === "LiveForm" && <LiveForm />}
+                {active === "EffectCounter" && <EffectCounter />}
+                {active === "DependencyTest" && <DependencyTest />}
+                {active === "ToggleTimer" && <ToggleTimer />}
+                {active === "JokeFetcher" && <JokeFetcher />}
+            </div>
         </>
     );
 }
