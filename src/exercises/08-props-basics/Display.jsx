@@ -5,5 +5,4 @@ function Display({ count }) {
         </div>
     );
 }
-
 export default Display;

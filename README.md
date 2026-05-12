@@ -11,6 +11,7 @@ Small exercises built while learning React fundamentals.
 - API fetching (async/await, loading state, error handling, AbortController)
 - Conditional rendering (&&, ternary)
 - Exercise navigator with active tab highlighting
+- Props (data props, function props, unidirectional data flow)
 
 ## Exercises
 
@@ -23,6 +24,7 @@ Small exercises built while learning React fundamentals.
 | 05  | useEffect — tracking specific state changes with dependency array          | `DependencyTest.jsx` |
 | 06  | useEffect — cleanup function with interval and mount/unmount               | `Timer.jsx`          |
 | 07  | API fetching — joke fetcher with loading, error state, and AbortController | `JokeFetcher.jsx`    |
+| 08  | Props — parent-child communication with data and function props            | `PropsDemo.jsx`      |
 
 ## Project Structure
 
@@ -43,8 +45,14 @@ react-practice-exercises/
         │   └── DependencyTest.jsx
         ├── 06-useeffect-cleanup/
         │   └── Timer.jsx
-        └── 07-api-fetching/
-            └── JokeFetcher.jsx
+        ├── 07-api-fetching/
+        │   └── JokeFetcher.jsx
+        └── 08-props-basics/
+            ├── ButtonControls.jsx
+            ├── Display.jsx
+            └── PropsDemo.jsx
+
+
 ```
 
 ## Purpose
