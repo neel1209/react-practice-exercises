@@ -6,6 +6,7 @@ import EffectCounter from "./exercises/04-useeffect-basic/EffectCounter";
 import DependencyTest from "./exercises/05-useeffect-dependency/DependencyTest";
 import ToggleTimer from "./exercises/06-useeffect-cleanup/ToggleTimer";
 import JokeFetcher from "./exercises/07-api-fetching/JokeFetcher";
+import PropsDemo from "./exercises/08-props-basics/PropsDemo";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         { id: "DependencyTest", label: "Dependency Test" },
         { id: "ToggleTimer", label: "Toggle Timer" },
         { id: "JokeFetcher", label: "Joke Fetcher" },
+        { id: "PropsDemo", label: "Props Basics" },
     ];
     return (
         <>
@@ -40,6 +42,7 @@ function App() {
                 {active === "DependencyTest" && <DependencyTest />}
                 {active === "ToggleTimer" && <ToggleTimer />}
                 {active === "JokeFetcher" && <JokeFetcher />}
+                {active === "PropsDemo" && <PropsDemo />}
             </div>
         </>
     );
