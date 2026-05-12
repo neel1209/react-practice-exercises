@@ -19,7 +19,7 @@ function DependencyTest() {
             <h1>Counter A : {countA}</h1>
             <button onClick={() => setCountA((prev) => prev + 1)}>+</button>
 
-            <h1>Counter A : {countB}</h1>
+            <h1>Counter B : {countB}</h1>
             <button onClick={() => setCountB((prev) => prev + 1)}>+</button>
         </>
     );

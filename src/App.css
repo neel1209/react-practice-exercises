@@ -5,46 +5,105 @@
 }
 
 body {
-    font-family: sans-serif;
-    background-color: #f4f4f4;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: #0f0f0f;
+    color: #ececec;
     min-height: 100vh;
 }
 
+/* Nav */
 .nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    padding: 16px 24px;
-    background-color: #1e1e1e;
+    gap: 6px;
+    padding: 14px 24px;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #2e2e2e;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-.nav button {
-    padding: 8px 16px;
+.nav a {
+    padding: 7px 14px;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.nav a:hover {
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+.nav a.active {
+    background-color: #646cff;
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Exercise area */
+.exercise-container {
+    padding: 48px 24px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* Global heading styles */
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #ccc;
+}
+
+/* Global button styles */
+button {
+    padding: 8px 18px;
     border: none;
     border-radius: 6px;
-    background-color: #3a3a3a;
-    color: #ccc;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.2s;
-}
-
-.nav button:hover {
-    background-color: #555;
-    color: white;
-}
-
-.nav button.active {
     background-color: #646cff;
     color: white;
-    font-weight: bold;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-.exercise-container {
-    padding: 40px 24px;
-    max-width: 800px;
-    margin: 0 auto;
+button:hover {
+    background-color: #535bf2;
+}
+
+/* Global input styles */
+input {
+    padding: 8px 12px;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    color: #ececec;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #646cff;
+}
+
+/* Global label styles */
+label {
+    font-size: 14px;
+    color: #aaa;
+    margin-right: 8px;
 }

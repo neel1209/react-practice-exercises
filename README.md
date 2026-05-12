@@ -10,8 +10,8 @@ Small exercises built while learning React fundamentals.
 - useEffect (basic, dependency array, cleanup)
 - API fetching (async/await, loading state, error handling, AbortController)
 - Conditional rendering (&&, ternary)
-- Exercise navigator with active tab highlighting
 - Props (data props, function props, unidirectional data flow)
+- React Router (BrowserRouter, Routes, Route, NavLink, dynamic routing)
 
 ## Exercises
 
@@ -32,6 +32,8 @@ Small exercises built while learning React fundamentals.
 react-practice-exercises/
 ├── README.md
 └── src/
+    ├── App.jsx
+    ├── App.css
     └── exercises/
         ├── 01-usestate-counter/
         │   └── Counter.jsx
@@ -48,12 +50,26 @@ react-practice-exercises/
         ├── 07-api-fetching/
         │   └── JokeFetcher.jsx
         └── 08-props-basics/
-            ├── ButtonControls.jsx
+            ├── ButtonControl.jsx
             ├── Display.jsx
             └── PropsDemo.jsx
-
-
 ```
+
+## Navigation
+
+Each exercise is accessible via its own route using React Router:
+
+| Route             | Exercise          |
+| ----------------- | ----------------- |
+| `/`               | Counter (default) |
+| `/Counter`        | Counter           |
+| `/ColorPicker`    | Color Picker      |
+| `/LiveForm`       | Live Form         |
+| `/EffectCounter`  | Effect Counter    |
+| `/DependencyTest` | Dependency Test   |
+| `/ToggleTimer`    | Toggle Timer      |
+| `/JokeFetcher`    | Joke Fetcher      |
+| `/PropsDemo`      | Props Basics      |
 
 ## Purpose
 

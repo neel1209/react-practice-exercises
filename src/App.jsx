@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Counter from "./exercises/01-usestate-counter/Counter";
 import ColorPicker from "./exercises/02-usestate-color-picker/ColorPicker";
 import LiveForm from "./exercises/03-event-handling-form/LiveForm";
@@ -10,40 +10,51 @@ import PropsDemo from "./exercises/08-props-basics/PropsDemo";
 import "./App.css";
 
 function App() {
-    const [active, setActive] = useState("Counter");
     const tabs = [
-        { id: "Counter", label: "Counter" },
-        { id: "ColorPicker", label: "Color Picker" },
-        { id: "LiveForm", label: "Live Form" },
-        { id: "EffectCounter", label: "Effect Counter" },
-        { id: "DependencyTest", label: "Dependency Test" },
-        { id: "ToggleTimer", label: "Toggle Timer" },
-        { id: "JokeFetcher", label: "Joke Fetcher" },
-        { id: "PropsDemo", label: "Props Basics" },
+        { id: "Counter", label: "Counter", element: <Counter /> },
+        { id: "ColorPicker", label: "Color Picker", element: <ColorPicker /> },
+        { id: "LiveForm", label: "Live Form", element: <LiveForm /> },
+        {
+            id: "EffectCounter",
+            label: "Effect Counter",
+            element: <EffectCounter />,
+        },
+        {
+            id: "DependencyTest",
+            label: "Dependency Test",
+            element: <DependencyTest />,
+        },
+        { id: "ToggleTimer", label: "Toggle Timer", element: <ToggleTimer /> },
+        { id: "JokeFetcher", label: "Joke Fetcher", element: <JokeFetcher /> },
+        { id: "PropsDemo", label: "Props Basics", element: <PropsDemo /> },
     ];
     return (
         <>
-            <nav className="nav">
-                {tabs.map((tab) => (
-                    <button
-                        key={tab.id}
-                        onClick={() => setActive(tab.id)}
-                        className={active === tab.id ? "active" : ""}
-                    >
-                        {tab.label}
-                    </button>
-                ))}
-            </nav>
-            <div className="exercise-container">
-                {active === "Counter" && <Counter />}
-                {active === "ColorPicker" && <ColorPicker />}
-                {active === "LiveForm" && <LiveForm />}
-                {active === "EffectCounter" && <EffectCounter />}
-                {active === "DependencyTest" && <DependencyTest />}
-                {active === "ToggleTimer" && <ToggleTimer />}
-                {active === "JokeFetcher" && <JokeFetcher />}
-                {active === "PropsDemo" && <PropsDemo />}
-            </div>
+            <BrowserRouter>
+                <nav className="nav">
+                    {tabs.map((tab) => (
+                        <NavLink
+                            key={tab.id}
+                            to={`/${tab.id}`}
+                            className={({ isActive }) =>
+                                isActive ? "active" : ""
+                            }
+                        >
+                            {tab.label}
+                        </NavLink>
+                    ))}
+                </nav>
+                <Routes>
+                    <Route path="/" element={<Counter />} />
+                    {tabs.map((tab) => (
+                        <Route
+                            key={tab.id}
+                            path={`/${tab.id}`}
+                            element={tab.element}
+                        ></Route>
+                    ))}
+                </Routes>
+            </BrowserRouter>
         </>
     );
 }

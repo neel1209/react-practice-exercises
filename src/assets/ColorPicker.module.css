@@ -27,7 +27,7 @@ body {
 .innerBox {
     height: auto;
     width: auto;
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     font-weight: bold;
 }
 
