@@ -1,38 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useFetch from "../../hooks/useFetch";
 
 function JokeFetcher() {
-    const [data, setData] = useState();
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState();
-    const [generate, setGenerate] = useState(0);
+    const BASE_URL = "https://official-joke-api.appspot.com/random_joke";
+    const [url, setUrl] = useState(BASE_URL);
+    const { data, isFetching, err } = useFetch(url);
 
-    useEffect(() => {
-        setLoading(true);
-        const controller = new AbortController();
-        const fetchJoke = async () => {
-            try {
-                const res = await fetch(
-                    "https://official-joke-api.appspot.com/random_joke",
-                );
-                setData(await res.json());
-            } catch (err) {
-                setError(err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchJoke();
-        return () => controller.abort();
-    }, [generate]);
-
-    const generateNewJoke = () => setGenerate((prev) => prev + 1);
-
+    const generateNewJoke = () => {
+        setUrl(`${BASE_URL}?t=${Math.random()}`);
+    };
     return (
         <>
             <div>
-                {loading && <h1>Loading</h1>}
-                {error && <h1>{error}</h1>}
-                {data && (
+                {isFetching && <h1>Loading</h1>}
+                {err && <h1>{err}</h1>}
+                {!isFetching && data && (
                     <>
                         <h1>Setup:</h1>
                         <h2>{data.setup}</h2>

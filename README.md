@@ -12,6 +12,7 @@ Small exercises built while learning React fundamentals.
 - Conditional rendering (&&, ternary)
 - Props (data props, function props, unidirectional data flow)
 - React Router (BrowserRouter, Routes, Route, NavLink, dynamic routing)
+- Custom hooks (useFetch — reusable data fetching logic)
 
 ## Exercises
 
@@ -34,6 +35,8 @@ react-practice-exercises/
 └── src/
     ├── App.jsx
     ├── App.css
+    ├── hooks/
+    │   └── useFetch.js
     └── exercises/
         ├── 01-usestate-counter/
         │   └── Counter.jsx
